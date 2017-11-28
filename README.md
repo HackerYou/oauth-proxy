@@ -13,11 +13,17 @@ This is built to be deployed easily on Heroku, when it is deployed you will need
 
 variable | value
 ---  | ---
+GRANT_TYPE | Defaults to `client_credentials`.
 CLIENT_ID | Client ID from API
 CLIENT_SECRET | Client secret for API
 TOKEN_URL | URL from API to generate a token. 
 
-If you are testing this locally you can set up a `.env` file to with these variables in it.
-
 On Heroku you can find these in the settings tab, look for Config Variables, click Reveal Config Vars and add your key value pairs there. 
 
+## Local development
+
+If you are testing this locally you can set up a `.env` file to with the above variables in it. As well as one more for the `PORT`.
+
+variable | value
+---  | ---
+PORT | The port you would like the app to run on.

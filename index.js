@@ -21,7 +21,7 @@ app.get('/token', (req,res) => {
     request
         .post(process.env.TOKEN_URL,{
             form: {
-                grant_type: 'client_credentials',
+                grant_type: process.env.GRANT_TYPE || 'client_credentials',
                 client_id: process.env.CLIENT_ID,
                 client_secret: process.env.CLIENT_SECRET
             }
