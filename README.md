@@ -27,3 +27,13 @@ If you are testing this locally you can set up a `.env` file to with the above v
 variable | value
 ---  | ---
 PORT | The port you would like the app to run on.
+
+This file will look something like this:
+
+```
+GRANT_TYPE=client_credentials
+PORT=3000
+CLIENT_ID=fasdkfjlakfj39ujafj3laj3
+CLIENT_SECRET=38afsdfaf3lkjaff983304jfajlksdg8a9sd8g03aj
+TOKEN_URL=https://api.yelp.com/oauth2/token
+```
