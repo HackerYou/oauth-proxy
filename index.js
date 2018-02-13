@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
+const qs = require('qs');
 
 const app = express();
 
@@ -31,6 +32,32 @@ app.get('/token', (req,res) => {
             }
             res.send({response:JSON.parse(body)})
         })
+});
+
+app.get('/v1',(req,res) => {
+    let URL = req.query.url;
+    const params = req.query.params;
+
+    if(params) {
+        URL = `${URL}?${qs.stringify(JSON.parse(params))}`
+    }
+
+    if(URL[0] === '/') {
+        URL = URL.substring(1,URL.length);
+    }
+
+    request.get({
+        url: `${process.env.REQUEST_BASE_URL}/${URL}`, oauth:{
+            consumer_key: process.env.CLIENT_V1_KEY,
+            consumer_secret: process.env.CLIENT_V1_SECRET
+    }},(err,r,body) => {
+        res.setHeader('Content-Type','application/json');
+        res.send(body);
+    });
+});
+
+app.post('/v1', (req, res) => {
+
 });
 
 app.get('/', (req,res) => {

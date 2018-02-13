@@ -31,7 +31,7 @@ PORT | The port you would like the app to run on.
 This file will look something like this:
 
 ```
-GRANT_TYPE=client_credentials
+GRANT_TYPE=client_credentials 
 PORT=3000
 CLIENT_ID=fasdkfjlakfj39ujafj3laj3
 CLIENT_SECRET=38afsdfaf3lkjaff983304jfajlksdg8a9sd8g03aj
